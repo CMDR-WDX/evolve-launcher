@@ -66,7 +66,7 @@ jobs:
         # and writes the result into files .GITHUB_TAG_NAME and .GITHUB_TAG_PRERELEASE
         # The step below then writes the result to GITHUB_OUTPUT, which is then used for `if` conditions
         # in the subsequent steps to determine if we need a release.
-        run: npx zx ./scripts/determine-and-patch-release-version.ts
+        run: pnpm dlx zx ./.github/workflows/determine-and-patch-release-version.ts
       - name: Read GitHub release metadata
         id: release_meta
         shell: bash
